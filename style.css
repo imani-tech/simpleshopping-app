@@ -16,6 +16,17 @@ body{
     margin: 20px;
 
 }
+.fa-bars{
+    font-size: 18px;
+}
+.fa-bag-shopping{
+    font-size: 18px;   
+}
+.name{
+    font-size: 20px;
+    font-weight: 700;
+    
+}
 .search-bar{
     --padding: 14px
     width: max-content;
@@ -64,21 +75,24 @@ flex: 1;
 
 .text h3{
     margin: 4px 0 0 0;
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 .second-text{
     margin-top: 10px;
     margin-bottom: 15px;
-    font-size: 12px;
+    font-size: 15px;
 
 }
 .btn{
     background-color: #7754d1;
     border: none;
-    padding: 9px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 15px;
     color: #ffff;
+    width: 120px;
+    font-size: 15px;
 }
-/* .image{
-    
-} */
+.image{
+  padding-right: 45px; 
+    padding-top: 30px;
+}
