@@ -96,3 +96,31 @@ flex: 1;
   padding-right: 45px; 
     padding-top: 30px;
 }
+/* category styles */
+.categories{
+ display: flex;
+ gap: 15px;
+ height: 100px;
+ 
+}
+.items{
+    background-color: rgba(254, 253, 253);
+    border: 2px solid rgba(247, 247, 250);
+    width: 200px;
+    display: grid;
+    justify-items: center;
+   padding-top: 10px;
+   border-radius: 10px; 
+}
+.items p{
+    margin: 0;    
+}
+.fa-shirt{
+  background-color:#ffe3e4 ; 
+   
+}
+
+.products img {
+    width: 100px;
+}
+
