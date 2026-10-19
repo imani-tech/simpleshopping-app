@@ -8,26 +8,28 @@ import ProductCard from './components/ProductCard';
 
 function App() {
 const [selectedCategory, setSelectedCategory] = useState("")  
-const [userSearch, setUserSearch]= useState("") 
+const [userSearch, setUserSearch]= useState(""); 
 let popular = products.slice(0, 5) 
 
-const filteredProducts = selectedCategory === "" ? popular : products.filter((categoryProducts) => {  
+const filteredProducts = selectedCategory === "" && userSearch === "" ? popular : selectedCategory === "" ? products : products.filter((categoryProducts) => {  
   return categoryProducts.category === selectedCategory
 });
- 
+ const searchResults = filteredProducts.filter((product) => product.description.toLowerCase().includes(userSearch.trim().toLowerCase()))
 const handleSelectedCategorie = (category) => {
   setSelectedCategory(category)
 }
-
+const handleUserSearchResult = (text) => {
+  setUserSearch(text)
+}
 
   return ( 
   <>  
     <Header />
-    < SearchBar />
+    <SearchBar onChange={handleUserSearchResult} />
     <Categories onClick={handleSelectedCategorie} />
     <div>{   
    
-    filteredProducts.map((product) => {
+    searchResults.map((product) => {
      
      return <ProductCard  productObj= {product} key={product.id}/>      
     })

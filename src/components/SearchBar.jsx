@@ -1,8 +1,11 @@
-export default function SearchBar() {
+export default function SearchBar({onChange}) {
+
     return (
          <div className="search-bar">
-        <span className="search-icon material-symbols-outlined">search</span>
-        <input type="search" className="search"placeholder="Search ..." />
+        <span > 
+           <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        <input type="search" className="search"placeholder="Search ..." onChange={(e) => onChange(e.target.value)}/>
     </div>
 
     )

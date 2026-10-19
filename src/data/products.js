@@ -294,7 +294,7 @@ const products = [
     },
     {
         id: 37,
-        description: "Chaussures élégantes pour femme",
+        description: "Red hills",
         category: "shoes",
         price: 310,
         rating: 4.4,
