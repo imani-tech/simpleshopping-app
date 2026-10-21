@@ -4,7 +4,7 @@ import SearchBar from './components/SearchBar'
 import Categories from './components/Categories'
 import products from "./data/products";
 import ProductCard from './components/ProductCard';
-
+import SalesBanner from './components/SaleBanner';
 
 function App() {
 const [selectedCategory, setSelectedCategory] = useState("")  
@@ -24,10 +24,11 @@ const handleUserSearchResult = (text) => {
 
   return ( 
   <>  
-    <Header />
+    <Header onClick={handleSelectedCategorie}/>
     <SearchBar onChange={handleUserSearchResult} />
+    <SalesBanner />
     <Categories onClick={handleSelectedCategorie} />
-    <div>{   
+    <div >{   
    
     searchResults.map((product) => {
      

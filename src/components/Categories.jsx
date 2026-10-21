@@ -26,7 +26,7 @@ export default function Categories({onClick}){
         </div>
 
         <div className="items">
-            <i className="fa-solid fa-stopwatch"></i>
+            <i className="fa-solid fa-gem"></i>
             <p onClick={() => onClick("accessories")}>Accessories</p>
         </div>
     </section>
