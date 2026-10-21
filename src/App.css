@@ -225,4 +225,30 @@ flex: 1;
     overflow-wrap: anywhere;
 }
 
+.category-view-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 20px 15px;
+}
 
+.category-view-header button {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: none;
+    border-radius: 50%;
+    background-color: #EDE5FA;
+    color: #7754D1;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.category-view-header h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #292536;
+}

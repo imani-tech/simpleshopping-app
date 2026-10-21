@@ -30,7 +30,7 @@ const displaySearch = userSearch !== "" && selectedCategory === ""
     {isHomeView && <SalesBanner /> }       
     {isHomeView &&  <Categories onClick={handleSelectedCategorie} /> }  
     {!isHomeView && (
-      <>
+      <div className="category-view-header">
       <button onClick={() => {
         handleSelectedCategorie("");
         handleUserSearchResult("")
@@ -38,7 +38,7 @@ const displaySearch = userSearch !== "" && selectedCategory === ""
       <i className="fa-solid fa-arrow-left"></i>
       </button>
       <h3>{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h3>
-      </>
+      </div>
     )} 
     {displaySearch &&(
       <h4>Search results..</h4>
