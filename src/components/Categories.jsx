@@ -1,12 +1,11 @@
 export default function Categories({onClick}){
     return (
         <>
-        <h4>Categories</h4>
-     <section className="categories">  
-        <div className="category">
-            <i className="fa-solid fa-sliders"></i>
-            <p onClick={() => onClick("")}>All</p>
-        </div>   
+        <div className="header-category">
+        <h3>Categories</h3>
+        <h5>view all</h5>    
+        </div>    
+     <section className="categories">         
 
         <div className="category">
             <i className="fa-solid fa-shirt"></i>

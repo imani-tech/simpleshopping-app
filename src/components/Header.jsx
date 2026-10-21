@@ -21,7 +21,7 @@ export default function Header({onClick}) {
             <i className="fa-solid fa-xmark"></i>
            </button>
            </div>
-           <div className="categories">
+           <div className="menu-categories">
             <div className="item">
             <i className="fa-solid fa-sliders"></i>
             <p onClick={() => onClick("")}>All Categories</p>
