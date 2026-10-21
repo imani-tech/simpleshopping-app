@@ -2,6 +2,7 @@ import Image from '/images/Bags/Lavender-handbag.png';
 export default function SalesBanner(){
     return (
         <>
+        
           <div className="main-card">
             <div className="text">
             <p className="first-text">Summer sale</p>

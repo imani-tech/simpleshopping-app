@@ -21,13 +21,28 @@ const handleSelectedCategorie = (category) => {
 const handleUserSearchResult = (text) => {
   setUserSearch(text)
 }
-
+const isHomeView = selectedCategory === "" && userSearch === ""; 
+const displaySearch = userSearch !== "" && selectedCategory === ""
   return ( 
   <section className="whole-page">  
     <Header onClick={handleSelectedCategorie}/>
     <SearchBar onChange={handleUserSearchResult} />
-    <SalesBanner />
-    <Categories onClick={handleSelectedCategorie} />
+    {isHomeView && <SalesBanner /> }       
+    {isHomeView &&  <Categories onClick={handleSelectedCategorie} /> }  
+    {!isHomeView && (
+      <>
+      <button onClick={() => {
+        handleSelectedCategorie("");
+        handleUserSearchResult("")
+        }}>
+      <i className="fa-solid fa-arrow-left"></i>
+      </button>
+      <h3>{selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)}</h3>
+      </>
+    )} 
+    {displaySearch &&(
+      <h4>Search results..</h4>
+    )}
     <div >{   
    
     searchResults.map((product) => {
