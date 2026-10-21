@@ -1,3 +1,35 @@
+body{
+    background-color: rgba(248, 248, 254);
+    font-family: "Open Sans", sans-serif;
+}
+.whole-page{
+    background-color: rgba(254, 253, 253);
+    width: 600px;
+    margin:40px auto;
+    border-radius: 30px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.top-section{
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.fa-bars{
+    font-size: 20px;
+}
+.menu-btn{
+    background-color: transparent;
+    border: none;
+}
+.fa-bag-shopping{
+    font-size: 20px;   
+}
+.name{
+    font-size: 25px;
+    font-weight: 700;
+    
+}
 .menu{
     position: fixed;
     top: 0;
@@ -41,10 +73,4 @@ button{
     cursor: pointer;
     margin: 0;
 }
-.top-section{
-    display: flex;    
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
 
-}

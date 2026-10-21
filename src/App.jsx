@@ -23,7 +23,7 @@ const handleUserSearchResult = (text) => {
 }
 
   return ( 
-  <>  
+  <section className="whole-page">  
     <Header onClick={handleSelectedCategorie}/>
     <SearchBar onChange={handleUserSearchResult} />
     <SalesBanner />
@@ -37,7 +37,7 @@ const handleUserSearchResult = (text) => {
     }
     </div>    
   
-  </>)
+  </section>)
    
 }
 

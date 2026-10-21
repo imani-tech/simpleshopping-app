@@ -10,7 +10,7 @@ export default function Header({onClick}) {
    
     return (
        <nav className="top-section">
-        <button type="button" onClick={handleMenu}>
+        <button type="button" onClick={handleMenu} className="menu-btn">
             <i className="fa-solid fa-bars"></i> 
         </button>
       {isMenuOpen && (
