@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import Categories from './components/Categories'
-import products from "./data/products";
+// import products from "./data/products";
 import ProductCard from './components/ProductCard';
 import SalesBanner from './components/SaleBanner';
 
@@ -11,8 +11,9 @@ const [selectedCategory, setSelectedCategory] = useState("")
 const [userSearch, setUserSearch]= useState(""); 
 const [apiProducts, setApiProducts] = useState([]);
 const [popularProducts, setPopularProducts] = useState([])
+const [allProducts, setAllProducts] = useState([]);
 // let popular = apiProducts.slice(0, 5) 
-const filteredProducts = selectedCategory === "" ? popularProducts : apiProducts;
+const filteredProducts = selectedCategory === "" && userSearch === ""? popularProducts : selectedCategory === "" && userSearch !== "" ? allProducts : apiProducts;
  const searchResults = filteredProducts.filter((product) => product.description.toLowerCase().includes(userSearch.trim().toLowerCase()))
 const categoryApiUrls = {
   "womens-dresses":"https://dummyjson.com/products/category/womens-dresses",
@@ -32,7 +33,7 @@ const categoryApiUrls = {
         const productData = await response.json()
         setApiProducts(productData.products)
   } catch (error) {
-         console.log(error)
+         console.error(error)
   }
 }
 const handleUserSearchResult = (text) => {
@@ -64,8 +65,9 @@ useEffect(() => {
         const mixproducts = responses.map((categoryData) => {
           return categoryData.products[0]
         })    
-       
+       const everyProduct = responses.flatMap((items) => items.products)       
         setPopularProducts(mixproducts)
+        setAllProducts(everyProduct)
     } catch (error) {
       console.log(error)
     }
