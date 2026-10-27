@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import Categories from './components/Categories'
@@ -9,8 +9,8 @@ import SalesBanner from './components/SaleBanner';
 function App() {
 const [selectedCategory, setSelectedCategory] = useState("")  
 const [userSearch, setUserSearch]= useState(""); 
+const [apiProducts, setApiProducts] = useState([]);
 let popular = products.slice(0, 5) 
-
 const filteredProducts = selectedCategory === "" && userSearch === "" ? popular : selectedCategory === "" ? products : products.filter((categoryProducts) => {  
   return categoryProducts.category === selectedCategory
 });
@@ -22,7 +22,23 @@ const handleUserSearchResult = (text) => {
   setUserSearch(text)
 }
 const isHomeView = selectedCategory === "" && userSearch === ""; 
-const displaySearch = userSearch !== "" && selectedCategory === ""
+const displaySearch = userSearch !== "" && selectedCategory === "";
+
+useEffect(() => {
+  async function fetchProductApi() {
+    try {
+        const response = await fetch('https://dummyjson.com/products')
+        if(!response.ok){
+          throw new Error("Cannot fetch resource")
+        }
+        const productApi = await response.json()
+        console.log(productApi)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  fetchProductApi()
+}, [])
   return ( 
   <section className="whole-page">  
     <Header onClick={handleSelectedCategorie}/>
@@ -43,7 +59,7 @@ const displaySearch = userSearch !== "" && selectedCategory === ""
     {displaySearch &&(
       <h4>Search results..</h4>
     )}
-    <div >{   
+    <div className='products-grid'>{   
    
     searchResults.map((product) => {
      
