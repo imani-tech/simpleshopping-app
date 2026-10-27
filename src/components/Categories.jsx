@@ -21,7 +21,7 @@ export default function Categories({onClick}){
         </div>
         <div className="category">
             <i className="fa-solid fa-heart"></i>
-            <p onClick={() => onClick("beauty")}>Makeup</p>
+            <p onClick={() => onClick("beauty")}>Beauty</p>
         </div>
 
         <div className="category">

@@ -11,13 +11,29 @@ const [selectedCategory, setSelectedCategory] = useState("")
 const [userSearch, setUserSearch]= useState(""); 
 const [apiProducts, setApiProducts] = useState([]);
 const [popularProducts, setPopularProducts] = useState([])
-let popular = apiProducts.slice(0, 5) 
-const filteredProducts = selectedCategory === "" && userSearch === "" ? popular : selectedCategory === "" ? products : products.filter((categoryProducts) => {  
-  return categoryProducts.category === selectedCategory
-});
+// let popular = apiProducts.slice(0, 5) 
+const filteredProducts = selectedCategory === "" ? popularProducts : apiProducts;
  const searchResults = filteredProducts.filter((product) => product.description.toLowerCase().includes(userSearch.trim().toLowerCase()))
-const handleSelectedCategorie = (category) => {
+const categoryApiUrls = {
+  "womens-dresses":"https://dummyjson.com/products/category/womens-dresses",
+  "womens-shoes": "https://dummyjson.com/products/category/womens-shoes",
+  "womens-bags":	"https://dummyjson.com/products/category/womens-bags",
+  "beauty" :	"https://dummyjson.com/products/category/beauty",
+  "womens-jewellery":	"https://dummyjson.com/products/category/womens-jewellery"
+}
+ async function handleSelectedCategorie(category){
   setSelectedCategory(category)
+  const url = categoryApiUrls[category];
+  try {
+        const response = await fetch(url)
+        if(!response.ok){
+          throw new Error("couldn't locate products based on seleced category")
+        }
+        const productData = await response.json()
+        setApiProducts(productData.products)
+  } catch (error) {
+         console.log(error)
+  }
 }
 const handleUserSearchResult = (text) => {
   setUserSearch(text)
