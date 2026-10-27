@@ -10,8 +10,8 @@ export default function ProductCard({productObj}){
             <button type="button" className="favoriets">
                 <i className="fa-regular fa-heart"></i>
                 </button>
-            <img src={productObj.src} alt={productObj.description} className="image"/>
-            <p className="description">{productObj.description}</p>
+            <img src={productObj.thumbnail} alt={productObj.description} className="image"/>
+            <p className="description">{productObj.title}</p>
             <p className="price">${productObj.price}</p>
             <p ><span><i className="fa-solid fa-star">
                 </i></span> {productObj.rating}

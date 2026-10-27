@@ -10,7 +10,8 @@ function App() {
 const [selectedCategory, setSelectedCategory] = useState("")  
 const [userSearch, setUserSearch]= useState(""); 
 const [apiProducts, setApiProducts] = useState([]);
-let popular = products.slice(0, 5) 
+const [popularProducts, setPopularProducts] = useState([])
+let popular = apiProducts.slice(0, 5) 
 const filteredProducts = selectedCategory === "" && userSearch === "" ? popular : selectedCategory === "" ? products : products.filter((categoryProducts) => {  
   return categoryProducts.category === selectedCategory
 });
@@ -25,19 +26,35 @@ const isHomeView = selectedCategory === "" && userSearch === "";
 const displaySearch = userSearch !== "" && selectedCategory === "";
 
 useEffect(() => {
-  async function fetchProductApi() {
+  async function fetchPopularProductApi() {
     try {
-        const response = await fetch('https://dummyjson.com/products')
-        if(!response.ok){
+      const urls = [
+        "https://dummyjson.com/products/category/womens-bags",
+        "https://dummyjson.com/products/category/womens-shoes",
+        "https://dummyjson.com/products/category/beauty",
+        "https://dummyjson.com/products/category/womens-jewellery",
+        "https://dummyjson.com/products/category/womens-dresses"
+      ]
+        const responses = await Promise.all(
+          urls.map(async (url) => {
+            const response = await fetch(url)
+          
+            if(!response.ok){
           throw new Error("Cannot fetch resource")
         }
-        const productApi = await response.json()
-        console.log(productApi)
+          return  response.json()
+          })
+        );
+        const mixproducts = responses.map((categoryData) => {
+          return categoryData.products[0]
+        })    
+       
+        setPopularProducts(mixproducts)
     } catch (error) {
       console.log(error)
     }
   }
-  fetchProductApi()
+  fetchPopularProductApi()
 }, [])
   return ( 
   <section className="whole-page">  
@@ -60,9 +77,7 @@ useEffect(() => {
       <h4>Search results..</h4>
     )}
     <div className='products-grid'>{   
-   
-    searchResults.map((product) => {
-     
+   (isHomeView ? popularProducts : searchResults).map((product) => {    
      return <ProductCard  productObj= {product} key={product.id}/>      
     })
     }

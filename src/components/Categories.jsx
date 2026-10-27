@@ -9,24 +9,24 @@ export default function Categories({onClick}){
 
         <div className="category">
             <i className="fa-solid fa-shirt"></i>
-            <p onClick={() => onClick("clothes")}>clothes</p>
+            <p onClick={() => onClick("womens-dresses")}>clothes</p>
         </div>
         <div className="category">
             <i className="fa-solid fa-shoe-prints"></i>
-            <p onClick={() => onClick("shoes")}>shoes</p>
+            <p onClick={() => onClick("womens-shoes")}>shoes</p>
         </div>
         <div className="category">
             <i className="fa-solid fa-bag-shopping"></i>
-            <p onClick={() => onClick("bags")}>Bags</p>
+            <p onClick={() => onClick("womens-bags")}>Bags</p>
         </div>
         <div className="category">
             <i className="fa-solid fa-heart"></i>
-            <p onClick={() => onClick("makeup-Products")}>Makeup</p>
+            <p onClick={() => onClick("beauty")}>Makeup</p>
         </div>
 
         <div className="category">
             <i className="fa-solid fa-gem"></i>
-            <p onClick={() => onClick("accessories")}>Accessories</p>
+            <p onClick={() => onClick("womens-jewellery")}>Accessories</p>
         </div>
     </section>
     </>
