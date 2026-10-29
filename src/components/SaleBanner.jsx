@@ -5,21 +5,23 @@ import assImg from '/images/Accessories/Cuff Ring.png'
 import dressImg from '/images/Clothes/min-dress.png'
 
 
-export default function SalesBanner(){
+export default function SalesBanner({ onClick }){
 const bannaArry = [{
     eyebrow: "Summer Sale",
     title: "Up to 30% off",
     subtitle: "On selected items",
     category: "womens-bags",
     background: "#efe4fd",
-    img: Image 
+    img: Image,
+    buttonColor: "#7754d1"
 }, {
     eyebrow: "Step Into Style",
     title: "Walk in Confidence",
     subtitle: "Find your perfect pair",
     category: "womens-shoes",
     background: "#fce4ec",
-    img: ShoeImg
+    img: ShoeImg,
+    buttonColor: "#c45b83"
 },{
     eyebrow: "Your Beauty Era",
     title: "Glow Your Way",
@@ -27,34 +29,38 @@ const bannaArry = [{
     category: "beauty",
     background: "#fbe8dc",
     img: beautyImg,
+    buttonColor: "#c77752"
 },{
     eyebrow: "The Finishing Touch",
     title: "Little Details, Big Style",
     subtitle: "Complete your look",
     category: "womens-jewellery",
     background: "#e4edf9",
-    img: assImg
+    img: assImg,
+    buttonColor: "#5279b8"
 },{
     eyebrow: "New Season",
     title: "Your Style, Your Rules",
     subtitle: "Discover your next favorite",
     category: "womens-dresses",
     background: "#e4f1e7",
-    img: dressImg
-}]
+    img: dressImg,
+    buttonColor: "#548464"
+}];
+const currentBanner = bannaArry[0];
 
     return (
         <>
         
-          <div className="main-card">
+          <div className="main-card" style={{backgroundColor: currentBanner.background}}>
             <div className="text">
-            <p className="first-text">Summer sale</p>
-            <h3 >Up to 30% off</h3>
-            <p className="second-text">On selected items</p>
-            <button className="btn" type="button">Shop now</button>
+            <p className="first-text">{currentBanner.eyebrow}</p>
+            <h3>{currentBanner.title}</h3>
+            <p className="second-text">{currentBanner.subtitle}</p>
+            <button className="btn" type="button" style={{backgroundColor: currentBanner.buttonColor}} onClick={() => onClick(currentBanner.category)}>Shop now</button>
             </div>
             <div>
-            <img  src={Image} alt="bag" width="150"  className="image" />
+            <img  src={currentBanner.img} alt="bag" width="150"  className="image"/>
         </div>
        </div>
 

@@ -78,7 +78,7 @@ useEffect(() => {
   <section className="whole-page">  
     <Header onClick={handleSelectedCategorie}/>
     <SearchBar onChange={handleUserSearchResult} />
-    {isHomeView && <SalesBanner /> }       
+    {isHomeView && <SalesBanner onClick={handleSelectedCategorie}/> }       
     {isHomeView &&  <Categories onClick={handleSelectedCategorie} /> }  
     {!isHomeView && (
       <div className="category-view-header">
