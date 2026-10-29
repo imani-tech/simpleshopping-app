@@ -4,7 +4,7 @@ body{
 }
 .whole-page{
     background-color: rgba(254, 253, 253);
-    /* width: 600px; */
+    width: 700px;
     margin:40px auto;
     border-radius: 30px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;

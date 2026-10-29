@@ -14,7 +14,7 @@ const [popularProducts, setPopularProducts] = useState([])
 const [allProducts, setAllProducts] = useState([]);
 // let popular = apiProducts.slice(0, 5) 
 const filteredProducts = selectedCategory === "" && userSearch === ""? popularProducts : selectedCategory === "" && userSearch !== "" ? allProducts : apiProducts;
- const searchResults = filteredProducts.filter((product) => product.description.toLowerCase().includes(userSearch.trim().toLowerCase()))
+const searchResults = filteredProducts.filter((product) => product.description.toLowerCase().includes(userSearch.trim().toLowerCase()))
 const categoryApiUrls = {
   "womens-dresses":"https://dummyjson.com/products/category/womens-dresses",
   "womens-shoes": "https://dummyjson.com/products/category/womens-shoes",
@@ -31,7 +31,7 @@ const categoryApiUrls = {
           throw new Error("couldn't locate products based on seleced category")
         }
         const productData = await response.json()
-        setApiProducts(productData.products)
+        setApiProducts(productData.products);
   } catch (error) {
          console.error(error)
   }

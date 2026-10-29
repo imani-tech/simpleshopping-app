@@ -14,6 +14,6 @@ export default function SalesBanner(){
             <img  src={Image} alt="bag" width="150"  className="image" />
         </div>
        </div>
-        </>
+               </>
     )
 }

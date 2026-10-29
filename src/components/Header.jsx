@@ -28,23 +28,23 @@ export default function Header({onClick}) {
             </div>
             <div className="item">
             <i className="fa-solid fa-shirt"></i>
-            <p onClick={() => onClick("clothes")}>Clothes</p>
+            <p onClick={() => onClick("womens-dresses")}>Clothes</p>
             </div>
             <div className="item">
             <i className="fa-solid fa-shoe-prints"></i>
-            <p onClick={() => onClick("shoes")}>Shoes</p>
+            <p onClick={() => onClick("womens-shoes")}>Shoes</p>
             </div>
             <div className="item">
             <i className="fa-solid fa-bag-shopping"></i>
-            <p onClick={() => onClick("bags")}>Bags</p>
+            <p onClick={() => onClick("womens-bags")}>Bags</p>
             </div>
             <div className="item">
             <i className="fa-solid fa-heart"></i>
-            <p onClick={() => onClick("makeup-Products")}>makeup</p>
+            <p onClick={() => onClick("beauty")}>makeup</p>
             </div>
             <div className="item">
             <i className="fa-solid fa-gem"></i>
-            <p onClick={() => onClick("accessories")}> Accessories</p>
+            <p onClick={() => onClick("womens-jewellery")}> Accessories</p>
             </div>
            </div>           
            <div className="bottom-menu">
