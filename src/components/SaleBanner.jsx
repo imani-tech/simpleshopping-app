@@ -1,11 +1,10 @@
 import Image from '/images/Bags/Lavender-handbag.png';
 import ShoeImg from '/images/Shoes/black boots.png'
-import beautyImg from '/images/Makeup_Products/Kj Cosmetic.jpeg'
+import beautyImg from '/images/Makeup_Products/Peach Glow Beauty Collection.png'
 import assImg from '/images/Accessories/Cuff Ring.png'
 import dressImg from '/images/Clothes/min-dress.png'
+import { useState, useEffect } from 'react';
 
-
-export default function SalesBanner({ onClick }){
 const bannaArry = [{
     eyebrow: "Summer Sale",
     title: "Up to 30% off",
@@ -47,8 +46,18 @@ const bannaArry = [{
     img: dressImg,
     buttonColor: "#548464"
 }];
-const currentBanner = bannaArry[0];
 
+export default function SalesBanner({ onClick }){
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+const currentBanner = bannaArry[currentIndex];
+useEffect(() => {
+ const interval =   setInterval(() => {
+        setCurrentIndex((prevCount) => (prevCount + 1) % bannaArry.length)
+
+    }, 3000)
+    return () => clearInterval(interval)
+}, [])
     return (
         <>
         
@@ -61,6 +70,7 @@ const currentBanner = bannaArry[0];
             </div>
             <div>
             <img  src={currentBanner.img} alt="bag" width="150"  className="image"/>
+            
         </div>
        </div>
 
