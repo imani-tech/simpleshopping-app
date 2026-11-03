@@ -329,6 +329,7 @@ flex: 1;
     color: #292638;
     font-weight: 600;
    font-family: "Roboto", sans-serif;
+   letter-spacing: 1.5px;
     
 }
 .secondary-info{
@@ -336,4 +337,5 @@ flex: 1;
     color: #888495;
     font-weight: 400;
     font-family: "Roboto Condensed", sans-serif;
+     letter-spacing: 1.2px;
 }
