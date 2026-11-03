@@ -5,24 +5,24 @@ export default function DeliveryInfo(){
         <div className="info-des">
             <i className="fa-solid fa-shield"></i>
             <div className="text-info">
-            <p className="">Secure Payment</p>
-            <p className="">100% secure checkout</p>
+            <p className="primary-info">Secure Payment</p>
+            <p className="secondary-info">100% secure checkout</p>
             </div>
         </div>
 
         <div className="info-des">
           <i className="fa-solid fa-truck-fast"></i>
            <div className="text-info">
-            <p className="">Free Shipping</p>
-            <p className="">On orders over $150</p>
+            <p className="primary-info">Free Shipping</p>
+            <p className="secondary-info">On orders over $150</p>
             </div>
         </div>
 
         <div className="info-des">
             <i className="fa-solid fa-phone"></i>
              <div className="text-info">
-            <p className="">24/7 Support</p>
-            <p className="">We're here to help</p>
+            <p className="primary-info">24/7 Support</p>
+            <p className="secondary-info">We're here to help</p>
            </div> 
         </div>
 

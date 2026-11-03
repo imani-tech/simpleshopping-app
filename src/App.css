@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 body{
     background-color: rgba(248, 248, 254);
     font-family: "Open Sans", sans-serif;
@@ -289,14 +290,19 @@ flex: 1;
     display: flex;
     background-color: #f9f9fd;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 20px;
 }
 .info-des{
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 5px;
+    gap: 15px;
+    flex: 1;
 }
 .text-info{
     display: flex;
@@ -306,4 +312,28 @@ flex: 1;
 }
 .text-info p{
     margin: 0;
+}
+.info-des i{
+    background-color: #d4c4f0;
+    color: #7150d1;
+    font-size: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+.primary-info{
+    font-size: 15px;
+    color: #292638;
+    font-weight: 600;
+   font-family: "Roboto", sans-serif;
+    
+}
+.secondary-info{
+    font-size: 12px;
+    color: #888495;
+    font-weight: 400;
+    font-family: "Roboto Condensed", sans-serif;
 }
