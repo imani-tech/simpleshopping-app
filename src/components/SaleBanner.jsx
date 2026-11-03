@@ -69,9 +69,13 @@ useEffect(() => {
             <button className="btn" type="button" style={{backgroundColor: currentBanner.buttonColor}} onClick={() => onClick(currentBanner.category)}>Shop now</button>
             </div>
             <div>
-            <img  src={currentBanner.img} alt="bag" width="150"  className="image"/>
-            
+            <img  src={currentBanner.img} alt="bag" width="150"  className="image"/>            
         </div>
+        <div className="buttons">
+        {bannaArry.map((bannar, index) => {
+        return  <button type='button' onClick={() => setCurrentIndex(index)} key={index} className={index === currentIndex ? "active-dot" : "dot"} ></button>
+            })}
+         </div>   
        </div>
 
 

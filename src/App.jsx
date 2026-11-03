@@ -5,7 +5,7 @@ import Categories from './components/Categories'
 // import products from "./data/products";
 import ProductCard from './components/ProductCard';
 import SalesBanner from './components/SaleBanner';
-
+import DeliveryInfo from './components/DeliveryInfo'
 function App() {
 const [selectedCategory, setSelectedCategory] = useState("")  
 const [userSearch, setUserSearch]= useState(""); 
@@ -100,7 +100,7 @@ useEffect(() => {
     })
     }
     </div>    
-  
+  <DeliveryInfo />
   </section>)
    
 }
