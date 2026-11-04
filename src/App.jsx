@@ -6,6 +6,8 @@ import Categories from './components/Categories'
 import ProductCard from './components/ProductCard';
 import SalesBanner from './components/SaleBanner';
 import DeliveryInfo from './components/DeliveryInfo'
+import BottomNav from './components/BottomNav'
+
 function App() {
 const [selectedCategory, setSelectedCategory] = useState("")  
 const [userSearch, setUserSearch]= useState(""); 
@@ -101,6 +103,7 @@ useEffect(() => {
     }
     </div>    
   <DeliveryInfo />
+  <BottomNav />
   </section>)
    
 }

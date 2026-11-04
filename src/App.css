@@ -339,3 +339,28 @@ flex: 1;
     font-family: "Roboto Condensed", sans-serif;
      letter-spacing: 1.2px;
 }
+.bottom-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #fdfdfd;
+   position: fixed;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+width: 600px;
+z-index: 100;
+}
+.bottom-nav button{
+    background-color: transparent;
+    border: none;
+}
+.bottom-nav i{
+    font-size: 23px;
+   color: #9693a3;
+}
+.bottom-nav p{
+    margin: 5px;
+    font-size: 15px;
+    color: #9693a3
+}
