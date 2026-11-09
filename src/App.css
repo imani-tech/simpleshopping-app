@@ -455,7 +455,7 @@ flex: 1;
 }
 .button-image {
    background-color: #f2f2f3;
-   border-radius: 20px;
+   border-radius: 15px;
    width: 250px;
   
 }
@@ -468,5 +468,15 @@ flex: 1;
 .images-container img{
     object-fit: contain;
      width: 250px;
-     height: fit-content;  
+     height: fit-content; 
+     
+}
+.favoriets{
+    border: none;
+    background-color: transparent;
+    position: relative;
+    left: 210px;
+    top: 7px;
+    font-size: 18px;
+    color: #48484a;
 }
