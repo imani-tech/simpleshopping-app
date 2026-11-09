@@ -82,6 +82,7 @@ useEffect(() => {
     <SearchBar onChange={handleUserSearchResult} />
     {isHomeView && <SalesBanner onClick={handleSelectedCategorie}/> }       
     {isHomeView &&  <Categories onClick={handleSelectedCategorie} /> }  
+    
     {!isHomeView && (
       <div className="category-view-header">
       <button onClick={() => {
@@ -98,11 +99,11 @@ useEffect(() => {
     )}
     <div className='products-grid'>{   
    (isHomeView ? popularProducts : searchResults).map((product) => {    
-     return <ProductCard  productObj= {product} key={product.id}/>      
+     return <ProductCard  productObj= {product} key={product.id} class="products"/>      
     })
     }
     </div>    
-  <DeliveryInfo />
+  {isHomeView && <DeliveryInfo />}
   <BottomNav />
   </section>)
    
