@@ -14,11 +14,15 @@ export default function ProductCard({productObj}){
 </div>
 </div>
  </div>
+ <div className="product-info-wrapper">
             <p className="description">{productObj.title}</p>
+            <div className="pr-wrapper">
             <p className="price">${productObj.price}</p>
-            <p ><span><i className="fa-solid fa-star">
+            <p className="rate"><span><i className="fa-solid fa-star">
                 </i></span> {productObj.rating}
                 </p>
+                </div>
+                </div>
             </div>    
         </section>
     )

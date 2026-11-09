@@ -480,3 +480,29 @@ flex: 1;
     font-size: 18px;
     color: #48484a;
 }
+.description{
+    font-family: "Lato", sans-serif;
+    font-size: 18px;
+    color: #292638;
+}
+.price{
+    color: #6a47ce;   
+    font-size: 15px;
+    margin: 0;  
+}
+.pr-wrapper{
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;    
+}
+.product-info-wrapper{
+   font-family: "Lato", sans-serif; 
+   padding: 10px;
+}
+.fa-star{
+    color: #fec724;
+}
+.rate{
+    color: #404249;
+    margin: 0;
+}
