@@ -1,6 +1,6 @@
 import { useState } from "react"
 import '../App.css';
-import '../styles/Header.module.css'
+import classes from '../styles/Header.module.css'
 
 export default function Header({onClick}) {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -9,19 +9,19 @@ export default function Header({onClick}) {
     }
    
     return (
-       <nav className="top-section">
-        <button type="button" onClick={handleMenu} className="menu-btn">
-            <i className="fa-solid fa-bars"></i> 
+       <nav className={classes["top-section"]}>
+        <button type="button" onClick={handleMenu} className={classes["menu-btn"]}>
+            <i className={`fa-solid fa-bars ${classes.bar}`}></i> 
         </button>
       {isMenuOpen && (
-        <div className="menu">
-            <div className="category">
-                <div className="categories-menu">
+        <div className={classes.menu}>
+            <div className={classes.category}>
+                <div className={classes["categories-menu"]}>
                    <p onClick={() => onClick("")}>Categories
                    <span><i class="fa-solid fa-chevron-right"></i></span>   
                    </p>
                 </div>
-                <div className="bottom-menu">                   
+                <div className={classes["bottom-menu"]}>                   
                     <p>Settings</p>
                     <span> <i class="fa-solid fa-chevron-right"></i></span>  
                 </div>

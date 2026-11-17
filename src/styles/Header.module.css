@@ -1,0 +1,64 @@
+.top-section{
+    display: flex;    
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    position: relative;
+}
+.bar{
+    font-size: 20px;
+}
+.menu-btn{
+    background-color: transparent;
+    border: none;
+}
+.fa-bag-shopping{
+    font-size: 20px;   
+}
+.name{
+    font-size: 25px;
+    font-weight: 700;
+    
+}
+.menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;    
+    background-color: #EED2E8;
+    padding: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 10;
+}
+/* .top-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+    align-items: center;
+    gap: 10px;
+} */
+.menu-categories{
+    border-bottom: 2px solid black;
+    margin-top: 15px;
+   
+}
+.item{
+     display: grid;
+    grid-template-columns: 1fr 6fr;
+    padding: 20px;
+}
+/* .bottom-menu{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+} */
+button{
+    cursor: pointer;
+}
+.menu p{
+    cursor: pointer;
+    margin: 0;
+}
