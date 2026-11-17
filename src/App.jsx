@@ -77,6 +77,7 @@ useEffect(() => {
   fetchPopularProductApi()
 }, [])
   return ( 
+    <>
   <section className="whole-page">  
     <Header onClick={handleSelectedCategorie}/>
     <SearchBar onChange={handleUserSearchResult} />
@@ -104,9 +105,11 @@ useEffect(() => {
     }
     </div>    
   {isHomeView && <DeliveryInfo />}
-  <BottomNav />
-  </section>)
-   
+   <BottomNav />
+  </section>
+ 
+   </>
+   )
 }
 
 export default App
