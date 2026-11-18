@@ -16,14 +16,13 @@ export default function Header({onClick}) {
       {isMenuOpen && (
         <div className={classes.menu}>
             <div className={classes.category}>
-                <div className={classes["categories-menu"]}>
-                   <p onClick={() => onClick("")}>Categories
-                   <span><i class="fa-solid fa-chevron-right"></i></span>   
-                   </p>
+                <div className={`${classes["categories-menu"]} `}>
+                   <p >Categories </p>
+                   <i class="fa-solid fa-chevron-right"></i>                  
                 </div>
-                <div className={classes["bottom-menu"]}>                   
+                <div className={classes["categories-menu"]}>                   
                     <p>Settings</p>
-                    <span> <i class="fa-solid fa-chevron-right"></i></span>  
+                     <i class="fa-solid fa-chevron-right"></i>
                 </div>
             </div>
         </div>
@@ -82,8 +81,8 @@ export default function Header({onClick}) {
 
         // </div>
       )}
-        <p className="name">Shoply</p>
-        <i className="fa-solid fa-bag-shopping"></i>
+        <p className={classes.name}>Shoply</p>
+        <i className={`fa-solid fa-bag-shopping ${classes["shopping-bag"]}`}></i>
        </nav>
     )
 }

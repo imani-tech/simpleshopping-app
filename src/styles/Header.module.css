@@ -12,7 +12,7 @@
     background-color: transparent;
     border: none;
 }
-.fa-bag-shopping{
+.shopping-bag{
     font-size: 20px;   
 }
 .name{
@@ -30,6 +30,15 @@
     overflow-y: auto;
     overflow-x: hidden;
     z-index: 10;
+   
+}
+.categories-menu{
+    display: flex;
+    gap: 10px;
+   align-items: flex-start;
+   justify-content:space-between;
+   padding: 10px;
+   
 }
 /* .top-menu{
     display: flex;

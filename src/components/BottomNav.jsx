@@ -1,8 +1,8 @@
-export default function BottomNav(){
+export default function BottomNav({onClick}){
     return (
         <>
             <nav className="bottom-nav">
-                <button className="home">
+                <button className="home" onClick={() =>onClick("")}>
                     <i className="fa-solid fa-house"></i>
                     <p>Home</p>                    
                 </button>

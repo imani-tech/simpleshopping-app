@@ -14,6 +14,8 @@ const [userSearch, setUserSearch]= useState("");
 const [apiProducts, setApiProducts] = useState([]);
 const [popularProducts, setPopularProducts] = useState([])
 const [allProducts, setAllProducts] = useState([]);
+const [favorites, setFavorites] = useState([]);
+console.log(allProducts)
 // let popular = apiProducts.slice(0, 5) 
 const filteredProducts = selectedCategory === "" && userSearch === ""? popularProducts : selectedCategory === "" && userSearch !== "" ? allProducts : apiProducts;
 const searchResults = filteredProducts.filter((product) => product.description.toLowerCase().includes(userSearch.trim().toLowerCase()))
@@ -76,6 +78,17 @@ useEffect(() => {
   }
   fetchPopularProductApi()
 }, [])
+
+// favorite function 
+function addOrRemoveFavItem(product){
+  const isProductInFav = favorites.some((favItem) => { return favItem.id === product.id})
+  if(isProductInFav){
+   const newFavArr = favorites.filter((item) =>  item.id !== product.id)
+   setFavorites(newFavArr)
+  }else{
+    setFavorites((prevItem) => [product, ...prevItem])
+  }
+}
   return ( 
     <>
   <section className="whole-page">  
@@ -105,7 +118,7 @@ useEffect(() => {
     }
     </div>    
   {isHomeView && <DeliveryInfo />}
-   <BottomNav />
+   <BottomNav onClick={handleSelectedCategorie}/>
   </section>
  
    </>
