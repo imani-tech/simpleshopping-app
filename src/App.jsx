@@ -15,7 +15,7 @@ const [apiProducts, setApiProducts] = useState([]);
 const [popularProducts, setPopularProducts] = useState([])
 const [allProducts, setAllProducts] = useState([]);
 const [favorites, setFavorites] = useState([]);
-console.log(allProducts)
+
 // let popular = apiProducts.slice(0, 5) 
 const filteredProducts = selectedCategory === "" && userSearch === ""? popularProducts : selectedCategory === "" && userSearch !== "" ? allProducts : apiProducts;
 const searchResults = filteredProducts.filter((product) => product.description.toLowerCase().includes(userSearch.trim().toLowerCase()))
@@ -112,8 +112,8 @@ function addOrRemoveFavItem(product){
       <h4>Search results..</h4>
     )}
     <div className='products-grid'>{   
-   (isHomeView ? popularProducts : searchResults).map((product) => {    
-     return <ProductCard  productObj= {product} key={product.id} class="products"/>      
+   (isHomeView ? popularProducts : searchResults).map((product) => {   
+     return <ProductCard  productObj= {product} key={product.id} class="products" onFavorite={addOrRemoveFavItem} isFavorite={favorites.some((item) => item.id === product.id) } />      
     })
     }
     </div>    

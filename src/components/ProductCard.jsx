@@ -1,16 +1,17 @@
 
-export default function ProductCard({productObj}){
+export default function ProductCard({productObj, onFavorite, isFavorite}){
+    console.log(productObj)
     return (
         <section >
           
             <div className="popular-products">
 <div className="products-wrapper">
               <div className="button-image"> 
-            <button type="button" className="favoriets">
-                <i className="fa-regular fa-heart"></i>
+            <button type="button" className="favoriets" onClick={() => onFavorite(productObj)} style={isFavorite ? {color: 'red'} : {color: 'gray'}}>
+               {isFavorite ? ( <i className="fa-solid fa-heart"></i>) : <i className="fa-regular fa-heart"></i>}              
                 </button>
                 <div className="images-container">
-            <img src={productObj.thumbnail} alt={productObj.description} className="image-productCard"/>
+            <img src={productObj.thumbnail} alt={productObj.description} className="image-productCard" />
 </div>
 </div>
  </div>
