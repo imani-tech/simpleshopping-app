@@ -93,6 +93,7 @@ function addOrRemoveFavItem(product){
 function handleActiveTab(selectedTab){
 setActiveTab(selectedTab)
 }
+const productsToDisplay = activeTab === 'favorites' ? favorites : isHomeView ? popularProducts : searchResults;
   return ( 
     <>
   <section className="whole-page">  
@@ -116,10 +117,10 @@ setActiveTab(selectedTab)
       <h4>Search results..</h4>
     )}
     <div className='products-grid'>{   
-   (isHomeView ? popularProducts : searchResults).map((product) => {   
+   (productsToDisplay.map((product) => {   
      return <ProductCard  productObj= {product} key={product.id} class="products" onFavorite={addOrRemoveFavItem} isFavorite={favorites.some((item) => item.id === product.id) } />      
     })
-    }
+   )}
     </div>    
   {isHomeView && <DeliveryInfo />}
    <BottomNav onActiveTab={handleActiveTab}/>
