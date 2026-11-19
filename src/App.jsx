@@ -98,9 +98,9 @@ const productsToDisplay = activeTab === 'favorites' ? favorites : isHomeView ? p
     <>
   <section className="whole-page">  
     <Header onClick={handleSelectedCategorie}/>
-    <SearchBar onChange={handleUserSearchResult} />
-    {isHomeView && <SalesBanner onClick={handleSelectedCategorie}/> }       
-    {isHomeView &&  <Categories onClick={handleSelectedCategorie} /> }  
+   {activeTab === 'home' && ( <SearchBar onChange={handleUserSearchResult} />)}
+    {activeTab === 'home' && isHomeView && <SalesBanner onClick={handleSelectedCategorie}/> }       
+    {activeTab === 'home' && isHomeView &&  <Categories onClick={handleSelectedCategorie} /> }  
     
     {!isHomeView && (
       <div className="category-view-header">
@@ -122,7 +122,7 @@ const productsToDisplay = activeTab === 'favorites' ? favorites : isHomeView ? p
     })
    )}
     </div>    
-  {isHomeView && <DeliveryInfo />}
+  {activeTab === 'home' && isHomeView && <DeliveryInfo />}
    <BottomNav onActiveTab={handleActiveTab}/>
   </section>
  
