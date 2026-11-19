@@ -94,7 +94,9 @@ function handleActiveTab(selectedTab){
 setActiveTab(selectedTab)
 }
 const productsToDisplay = activeTab === 'favorites' ? favorites : isHomeView ? popularProducts : searchResults;
-  return ( 
+
+
+return ( 
     <>
   <section className="whole-page">  
     <Header onClick={handleSelectedCategorie}/>
@@ -116,7 +118,14 @@ const productsToDisplay = activeTab === 'favorites' ? favorites : isHomeView ? p
     {displaySearch &&(
       <h4>Search results..</h4>
     )}
-    <div className='products-grid'>{   
+    {activeTab === 'favorites' && (
+      <div className="category-view-header">        
+        <button onClick={() => handleActiveTab('home')}>
+          <i className="fa-solid fa-arrow-left"></i>
+        </button>
+        <p style={{fontSize: 18}}>Favorites</p>
+      </div>)}
+    <div className='products-grid'>{       
    (productsToDisplay.map((product) => {   
      return <ProductCard  productObj= {product} key={product.id} class="products" onFavorite={addOrRemoveFavItem} isFavorite={favorites.some((item) => item.id === product.id) } />      
     })
