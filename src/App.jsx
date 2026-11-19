@@ -94,8 +94,16 @@ function handleActiveTab(selectedTab){
 setActiveTab(selectedTab)
 }
 const productsToDisplay = activeTab === 'favorites' ? favorites : isHomeView ? popularProducts : searchResults;
-
-
+function handleEmptyFavTab(){
+  if(favorites.length === 0 && activeTab === 'favorites'){
+    return (
+      <div>
+        <p>Your favorites list is empty.</p>
+      </div>
+    )
+  } else{
+    return null
+  } }
 return ( 
     <>
   <section className="whole-page">  
@@ -104,7 +112,7 @@ return (
     {activeTab === 'home' && isHomeView && <SalesBanner onClick={handleSelectedCategorie}/> }       
     {activeTab === 'home' && isHomeView &&  <Categories onClick={handleSelectedCategorie} /> }  
     
-    {!isHomeView && (
+    {!isHomeView && activeTab === 'home' && (
       <div className="category-view-header">
       <button onClick={() => {
         handleSelectedCategorie("");
@@ -125,8 +133,8 @@ return (
         </button>
         <p style={{fontSize: 18}}>Favorites</p>
       </div>)}
-    <div className='products-grid'>{       
-   (productsToDisplay.map((product) => {   
+    <div className='products-grid'>{  
+    favorites.length === 0 && activeTab === 'favorites' ? handleEmptyFavTab() : (productsToDisplay.map((product) => {   
      return <ProductCard  productObj= {product} key={product.id} class="products" onFavorite={addOrRemoveFavItem} isFavorite={favorites.some((item) => item.id === product.id) } />      
     })
    )}
